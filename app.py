@@ -1,13 +1,10 @@
 import os
+# 清除所有代理设置，避免云端环境问题
+for key in ["http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY", "all_proxy", "ALL_PROXY"]:
+    os.environ.pop(key, None)
 
 import streamlit as st
 
-import requests
-try:
-    r = requests.get("https://api.deepseek.com", timeout=5)
-    st.write(f"DeepSeek 可达，状态码：{r.status_code}")
-except Exception as e:
-    st.write(f"DeepSeek 不可达：{e}")
 
 # 云端从 Streamlit Secrets 读，本地从环境变量读
 if "DEEPSEEK_API_KEY" in st.secrets:
