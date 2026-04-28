@@ -2,8 +2,9 @@ import os
 os.environ["http_proxy"] = "http://127.0.0.1:7890"
 os.environ["https_proxy"] = "http://127.0.0.1:7890"
 
-from dotenv import load_dotenv
-load_dotenv()
+import streamlit as st
+if "DEEPSEEK_API_KEY" in st.secrets:
+    os.environ["DEEPSEEK_API_KEY"] = st.secrets["DEEPSEEK_API_KEY"]
 
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
