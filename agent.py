@@ -1,6 +1,4 @@
 import os
-os.environ["http_proxy"] = "http://127.0.0.1:7890"
-os.environ["https_proxy"] = "http://127.0.0.1:7890"
 
 import streamlit as st
 if "DEEPSEEK_API_KEY" in st.secrets:

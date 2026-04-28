@@ -1,6 +1,4 @@
 import os
-os.environ["http_proxy"] = "http://127.0.0.1:7890"
-os.environ["https_proxy"] = "http://127.0.0.1:7890"
 
 from langchain_core.tools import tool
 from data import get_stock_history, get_stock_info, get_financial_metrics
