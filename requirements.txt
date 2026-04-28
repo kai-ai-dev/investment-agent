@@ -1,0 +1,15 @@
+akshare
+pdfplumber
+langchain
+langchain-openai
+langgraph
+chromadb
+sentence-transformers
+streamlit
+plotly
+python-dotenv
+yfinance
+langchain-text-splitters
+langchain-community
+langchain-huggingface
+langchain-chroma
