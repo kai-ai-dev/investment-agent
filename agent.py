@@ -1,18 +1,16 @@
 import os
 
 import streamlit as st
-if "DEEPSEEK_API_KEY" in st.secrets:
-    os.environ["DEEPSEEK_API_KEY"] = st.secrets["DEEPSEEK_API_KEY"]
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langgraph.prebuilt import create_react_agent
 from tools import tool_get_market_data, tool_get_financial_metrics, tool_search_reports
 
-# DeepSeek 兼容 OpenAI 格式
-llm = ChatOpenAI(
-    model="deepseek-chat",
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://api.deepseek.com",
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
+    api_key=os.getenv("GROQ_API_KEY"),
     temperature=0
 )
 
