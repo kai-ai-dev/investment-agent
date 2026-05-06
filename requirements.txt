@@ -12,4 +12,4 @@ yfinance
 langchain-text-splitters
 langchain-community
 langchain-huggingface
-langchain-chroma
+langchain-chromalangchain-groq
