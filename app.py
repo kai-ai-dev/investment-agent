@@ -7,8 +7,8 @@ import streamlit as st
 
 
 # 云端从 Streamlit Secrets 读，本地从环境变量读
-if "DEEPSEEK_API_KEY" in st.secrets:
-    os.environ["DEEPSEEK_API_KEY"] = st.secrets["DEEPSEEK_API_KEY"]
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 import yfinance as yf
 import plotly.graph_objects as go
